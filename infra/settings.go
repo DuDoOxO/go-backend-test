@@ -21,7 +21,5 @@ func GetEnv(v interface{}) error {
 		return fmt.Errorf("parse env error : %s", err)
 	}
 
-	fmt.Println(v)
-
 	return nil
 }
