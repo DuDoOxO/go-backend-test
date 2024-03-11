@@ -1,4 +1,4 @@
-build-mongo:
+build-all:
 	docker-compose up -d
 
-.PHONY: build-mongo
+.PHONY: build-all

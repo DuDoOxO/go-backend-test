@@ -1,6 +1,16 @@
 version: '3.1'
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
   mongo:
     image: mongo:5.0
     restart: always
@@ -12,3 +22,4 @@ services:
       - ./init.js:/docker-entrypoint-initdb.d/init.js
     ports:
       - 27017:27017
+
